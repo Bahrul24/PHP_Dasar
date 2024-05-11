@@ -1,20 +1,25 @@
 <?php
 
-$namaBuah = array("Nanas","Mangga","Jeruk","Apel","Melon","Manggis");
-echo"saya suka" .$namaBuah[0]. ",".  $namaBuah[1]." dan ".$namaBuah[2]."."."<br>";
+$namaBuah = array("Nanas", "Mangga", "jeruk", "Apel", "Melon", "Manggis");
+echo "saya suka " .$namaBuah[0]. ",".$namaBuah[1]. " dan " .$namaBuah[2]. "."."<br>";
 
-// tampilkan Mangga
-echo "saya suka".$namaBuah[2]."<br>";
-// tampilkan Jeruk
-echo "saya suka".$namaBuah[3]."<br>";
-// tampilkan Apel
-echo "saya suka".$namaBuah[4]."<br>";
-// tampilkan Melon
-echo "saya suka".$namaBuah[5]."<br>";
+//tampikan Mangga
+echo "saya suka ".$namaBuah[1]."<br>" ;
+// tampikan Jeruk
+echo "saya suka ".$namaBuah[2]. "<br>";
+// tampikan Apel
+echo "saya suka " .$namaBuah[3]. "<br>" ;
+// tampikan Melon
+echo "saya suka " . $namaBuah[4]. "<br>" ;
 
 // array dengan spesifik index
-$umur = array ("Andi"=>"35 Tahun","Ben"=>"37 Tahun","Joe"=>"46 Tahun");
+$umur = array("Andi"=>"35 Tahun", "Ben"=>"37 Tahun", "Joe"=>"Tahun");
 $umur['ahmad']="50 Tahun";
-echo "umur andi adalah".$umur["Andi"]."<br>";
+echo "Umur Andi adalah " .$umur['Andi'] ;
 // tampilkan semua umur
+
+foreach ($umur as $nama => $umur) {
+    echo "<br>Umur $nama adalah $umur.";
+}
+
 ?>

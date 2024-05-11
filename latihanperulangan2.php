@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan Perulangan 2</title>
+    <title>Latihan Perulangan 2 - Ganjil atau Genap</title>
 </head>
 <body>
-    <h1>Menentukan Bilangan Ganjil dan Genap</h1>
-    <?php
-        $angka = array(12, 13, 15, 16, 67, 189, 346, 876, 54232, 3256);
 
-        for ($i = 0; $i < count($angka); $i++) {
-            $currentNumber = $angka[$i];
+<h2>Latihan Perulangan 2 - Ganjil atau Genap</h2>
 
-            if ($currentNumber % 2 == 0) {
-                echo "$currentNumber : Genap <br>";
-            } else {
-                echo "$currentNumber : Ganjil <br>";
-            }
-        }
-    ?>
+<?php
+// Array angka
+$angka = array(12, 13, 15, 16, 67, 189, 346, 876, 54232, 3256);
+
+// Looping untuk mengecek setiap angka dalam array
+foreach ($angka as $nomor) {
+    // Cek apakah angka ganjil atau genap
+    if ($nomor % 2 == 0) {
+        echo "Nomor : $nomor Genap<br>";
+    } else {
+        echo "Nomor : $nomor Ganjil<br>";
+    }
+}
+?>
+
 </body>
 </html>

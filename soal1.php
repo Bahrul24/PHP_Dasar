@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perhitungan Gaji Bersih</title>
 </head>
 <body>
-    <h1>Perhitungan Gaji Bersih Obi</h1>
 
-    <?php
-    // Deklarasi variabel gaji pokok dan tunjangan
-    $gajiPokok = 3250000;
-    $tunjangan = 1200000;
+<h2>Perhitungan Gaji Bersih Obi</h2>
 
-    // Hitung gaji kotor
-    $gajiKotor = $gajiPokok + $tunjangan;
+<?php
+// Gaji pokok Obi
+$gaji_pokok = 3250000;
 
-    // Hitung pajak penghasilan (10% dari gaji kotor)
-    $pajak = 0.1 * $gajiKotor;
+// Tunjangan jabatan Obi
+$tunjangan_jabatan = 1200000;
 
-    // Hitung gaji bersih
-    $gajiBersih = $gajiKotor - $pajak;
-    ?>
+// Hitung gaji kotor (gaji pokok + tunjangan)
+$gaji_kotor = $gaji_pokok + $tunjangan_jabatan;
 
-    <p>Gaji pokok Obi: Rp. <?php echo number_format($gajiPokok, 0, ',', '.'); ?>,-</p>
-    <p>Tunjangan jabatan: Rp. <?php echo number_format($tunjangan, 0, ',', '.'); ?>,-</p>
-    <p>Gaji kotor: Rp. <?php echo number_format($gajiKotor, 0, ',', '.'); ?>,-</p>
-    <p>Pajak penghasilan (10%): Rp. <?php echo number_format($pajak, 0, ',', '.'); ?>,-</p>
-    <h2>Gaji bersih yang diterima Obi setiap bulannya adalah: Rp. <?php echo number_format($gajiBersih, 0, ',', '.'); ?>,-</h2>
+// Pajak penghasilan (10% dari gaji kotor)
+$pajak = 0.1 * $gaji_kotor;
+
+// Hitung gaji bersih (gaji kotor dikurangi pajak)
+$gaji_bersih = $gaji_kotor - $pajak;
+?>
+
+<p>Gaji pokok Obi: Rp. <?php echo number_format($gaji_pokok, 2, ',', '.'); ?>,-</p>
+<p>Tunjangan jabatan Obi: Rp. <?php echo number_format($tunjangan_jabatan, 2, ',', '.'); ?>,-</p>
+<p>Gaji kotor Obi: Rp. <?php echo number_format($gaji_kotor, 2, ',', '.'); ?>,-</p>
+<p>Pajak penghasilan (10% dari gaji kotor): Rp. <?php echo number_format($pajak, 2, ',', '.'); ?>,-</p>
+<h3>Jadi gaji bersih yang diterima Obi adalah Rp. <?php echo number_format($gaji_bersih, 2, ',', '.'); ?>,-</h3>
+
 </body>
 </html>

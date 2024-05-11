@@ -1,76 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penentuan Pecahan Uang</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>Perhitungan Pecahan Uang</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Penentuan Pecahan Uang</h1>
-        <?php
-        // Deklarasi variabel uang tabungan Ani
-        $uangTabungan = 1387500;
 
-        // Daftar pecahan uang
-        $pecahan = array(100000, 50000, 20000, 10000, 5000, 2000, 500);
+<h2>Perhitungan Pecahan Uang</h2>
 
-        // Inisialisasi array untuk menyimpan banyaknya masing-masing pecahan uang
-        $banyakPecahan = array();
+<?php
+// Uang yang akan diambil oleh Ani
+$jumlah_uang = 1387500;
 
-        // Proses penentuan banyaknya masing-masing pecahan uang
-        foreach ($pecahan as $nilai) {
-            $banyakPecahan[$nilai] = intval($uangTabungan / $nilai);
-            $uangTabungan %= $nilai;
-        }
-        ?>
-        <table>
-            <tr>
-                <th>Nominal</th>
-                <th>Banyaknya</th>
-            </tr>
-            <?php foreach ($banyakPecahan as $nominal => $banyak) { ?>
-            <tr>
-                <td>Rp. <?php echo number_format($nominal, 0, ',', '.'); ?></td>
-                <td><?php echo $banyak; ?></td>
-            </tr>
-            <?php } ?>
-        </table>
-    </div>
+// Pecahan uang yang berlaku
+$pecahan = array(100000, 50000, 20000, 10000, 5000, 2000, 500);
+
+// Inisialisasi variabel untuk menyimpan banyaknya masing-masing pecahan uang
+$banyak_pecahan = array();
+
+// Loop untuk menghitung banyaknya masing-masing pecahan uang
+foreach ($pecahan as $nilai) {
+    // Hitung banyaknya pecahan uang yang diperoleh Ani
+    $jumlah_pecahan = floor($jumlah_uang / $nilai);
+    // Simpan hasil perhitungan dalam array
+    $banyak_pecahan[$nilai] = $jumlah_pecahan;
+    // Kurangi jumlah uang dengan nilai pecahan yang telah dihitung
+    $jumlah_uang -= $jumlah_pecahan * $nilai;
+}
+
+// Tampilkan banyaknya masing-masing pecahan uang
+echo "<p>Banyaknya masing-masing pecahan uang yang diperoleh Ani:</p>";
+foreach ($banyak_pecahan as $nilai => $jumlah) {
+    echo "<p>Pecahan Rp. " . number_format($nilai, 0, ',', '.') . " : " . $jumlah . " lembar</p>";
+}
+?>
+
 </body>
 </html>

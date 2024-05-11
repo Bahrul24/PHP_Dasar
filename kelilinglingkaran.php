@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keliling Lingkaran</title>
-</head>
-<body>
-    <h1>Menghitung Keliling Lingkaran</h1>
+<?php
+$jari_jari = 30; // dalam cm
+$keliling = 2 * pi() * $jari_jari;
 
-    <?php
-    // Deklarasi variabel
-    $jari_jari = 15; // jari-jari lingkaran
-
-    // Menghitung keliling lingkaran
-    $keliling = 2 * M_PI * $jari_jari;
-
-    // Menampilkan hasil perhitungan
-    echo "<p>Jari-jari lingkaran: $jari_jari cm</p>";
-    echo "<p>Keliling lingkaran: $keliling cm</p>";
-    ?>
-    <footer>
-        <p> Salva Mahardhika (234311026).</p>
-    </footer>
-</body>
-</html>
+echo "Keliling lingkaran dengan jari-jari $jari_jari cm adalah: " . $keliling . " cm";
+?>

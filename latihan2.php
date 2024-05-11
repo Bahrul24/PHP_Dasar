@@ -1,17 +1,18 @@
 <?php
 // variabel dalam php
-$txt = "Selamat Datang!";
+$txt = "Selamat datang !";
 $txt2 = "Politeknik Negeri Madiun";
 $x = 5;
 $y = 10.5;
 
-echo "<p> Isi Variabel txt adalah : $txt</p>"; 
-echo "<p> Isi Variabel x adalah : $x </p>";
-echo "<p> Isi Variabel y adalah : $y </p>";
-echo $x + $y; 
+echo "<p>isi Variable txt adalah: $txt</p>" ;
+echo "<p>isi Variable x adalah: $x</p>" ;
+echo "<p>isi Variable y adalah: $y</p>" ;
+echo "Belajar PHP di " . $txt2 . "<br>";
+echo $x + $y;
 
-// PHP Konstanta
-define("nama_konstanta","{salva}");
-echo "<br/>". nama_konstanta;
+// PHP konstanta
+define("nama_konstanta", "{Mohammad Dimas Bahrul Ikhwani}");
+echo "<br>".nama_konstanta;
 
 ?>

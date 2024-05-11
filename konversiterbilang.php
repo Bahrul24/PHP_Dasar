@@ -1,64 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konversi Angka </title>
+    <title>Konversi Terbilang</title>
 </head>
 <body>
-    <h1>Konversi Angka ke huruf</h1>
 
-    <form method="post">
-        <label for="angka">Masukkan Angka (1-9):</label>
-        <input type="number" id="angka" name="angka" min="1" max="9" required>
-        <button type="submit">Konversi</button>
-    </form>
+<h2>Konversi Angka ke Terbilang</h2>
 
-    <?php
-    // Fungsi untuk mengkonversi angka menjadi terbilang
-    function konversiTerbilang($angka) {
-        switch ($angka) {
-            case 1:
-                return "satu";
-                break;
-            case 2:
-                return "dua";
-                break;
-            case 3:
-                return "tiga";
-                break;
-            case 4:
-                return "empat";
-                break;
-            case 5:
-                return "lima";
-                break;
-            case 6:
-                return "enam";
-                break;
-            case 7:
-                return "tujuh";
-                break;
-            case 8:
-                return "delapan";
-                break;
-            case 9:
-                return "sembilan";
-                break;
-            default:
-                return "Angka tidak valid";
-        }
+<form method="post">
+    Masukkan angka (1-9): <input type="number" name="angka" min="1" max="9" required><br><br>
+    <input type="submit" name="submit" value="Konversi">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $angka = $_POST["angka"];
+
+    switch ($angka) { 
+        case 1:
+            $terbilang = "satu";
+            break;
+        case 2:
+            $terbilang = "dua";
+            break;
+        case 3:
+            $terbilang = "tiga";
+            break;
+        case 4:
+            $terbilang = "empat";
+            break;
+        case 5:
+            $terbilang = "lima";
+            break;
+        case 6:
+            $terbilang = "enam";
+            break;
+        case 7:
+            $terbilang = "tujuh";
+            break;
+        case 8:
+            $terbilang = "delapan";
+            break;
+        case 9:
+            $terbilang = "sembilan";
+            break;
+        default:
+            $terbilang = "Angka tidak valid";
+            break;
     }
 
-    // Memeriksa apakah nilai sudah di-submit melalui form
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Mengambil nilai dari input
-        $angka = $_POST["angka"];
-        // Menampilkan hasil konversi
-        echo "<p>Angka: " . $angka . "</p>";
-        echo "<p>Terbilang: " . konversiTerbilang($angka) . "</p>";
-    }
-    ?>
+    // Tampilkan hasil konversi
+    echo "<br>Angka $angka dalam terbilang adalah \"$terbilang\"";
+}
+?>
 
 </body>
 </html>
